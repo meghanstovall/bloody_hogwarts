@@ -1,0 +1,11 @@
+<h1>All Courses</h1><br>
+
+<% @courses.ordered.each do |course| %>
+  <section id="course-<%= course.id %>">
+    <h3><%= course.name %>: <%= course.student_count %></h3>
+    <% course.students.ordered.each do |student| %>
+      <p><%= student.name %></p>
+    <% end %>
+    <br>
+  </section>
+<% end %>
